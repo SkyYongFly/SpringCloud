@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  *  声明本应用为Sping Cloud Eureka客户端，将注册到服务注册中心
- *  @EnableCircuitBreaker 开启断路器功能
+ *  @EnableCircuitBreaker 开启服务降级功能
  *
  * @author  zhuyong
  * @date    2018/10/8 16:18
