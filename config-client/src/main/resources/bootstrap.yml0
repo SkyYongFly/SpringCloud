@@ -1,22 +1,17 @@
+##当配置服务器以及客户端没有纳入服务管理范畴时的配置
+##直接通过URL地址指定配置服务器地址
 spring:
   application:
     #声明当前应用读取配置文件服务器对应的Git仓库的配置文件为 config-client 对应的文件
     name: config-client
   cloud:
     config:
-      discovery:
-        #开启通过服务来访问Config Server的功能
-        enabled: true
-        #指定Config Server注册的服务名,不需要再通过URL写死地址寻址配置服务器
-        serviceId: config-server-git
+      #声明配置服务器地址，这里即 config-server-git 应用的地址
+      uri: http://localhost:2401/
       #声明需要读取的配置文件版本类型,即当前应用要读取的配置文件为 config-client-dev.yml或者config-client-dev.properties
       profile: default
-
-eureka:
-  client:
-    service-url:
-      #配置服务注册中心
-      defaultZone: http://localhost:1001/eureka/
+      #声明配置文件Git版本分支
+      label: master
 
 server:
   port: 2402

@@ -10,5 +10,11 @@ spring:
           #****************************
           #公共仓库可以不设置用户名和密码
 
+eureka:
+  client:
+    service-url:
+      #配置服务注册中心
+      defaultZone: http://localhost:1001/eureka/
+
 server:
   port: 2401
