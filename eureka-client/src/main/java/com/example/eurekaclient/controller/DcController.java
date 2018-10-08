@@ -18,7 +18,8 @@ public class DcController {
     DiscoveryClient discoveryClient;
 
     @GetMapping("/dc")
-    public String dc() {
+    public String dc() throws Exception{
+        Thread.sleep(5000L); //测试休眠一段时间，以测试断路器功能
         String services = "Services: " + discoveryClient.getServices();
         System.out.println(services);
         return services;
