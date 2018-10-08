@@ -14,11 +14,19 @@ public class ConfigClientApplication {
 		SpringApplication.run(ConfigClientApplication.class, args);
 	}
 
-	@Value("${info}")
-	private String info;
+	/**
+	 * 这里通过占位符获取远程配置文件中的配置信息
+	 */
+	@Value("${user}")
+	String user;
 
-	@GetMapping("/info")
-	public String getConfigInfoNode(){
-		return info;
+	/**
+	 * 通过访问  http://localhost:2402/user  可以获取user配置值
+	 * 其实不设置MVC的话也可以直接访问属性值，例如 http://localhost:2402/info 会直接解析映射对应的 info节点的配置值
+	 * @return
+     */
+	@GetMapping("/user")
+	public String getConfigUserNode(){
+		return user;
 	}
 }
