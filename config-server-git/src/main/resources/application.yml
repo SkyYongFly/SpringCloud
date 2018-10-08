@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          #声明配置配置所在的git仓库地址
+          uri: https://github.com/SkyYongFly/spring-cloud-repo.git
+          #****************************
+          #公共仓库可以不设置用户名和密码
+
+server:
+  port: 2401
