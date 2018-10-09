@@ -9,6 +9,6 @@ eureka:
   instance:
     hostname: localhost
   client:
-    #作为服务注册中心，不需要注册到自身
+    #搴旂敤涓烘湇鍔℃敞鍐屼腑蹇冿紝涓嶉渶瑕佹敞鍐屽埌鑷韩
     register-with-eureka: false
     fetch-registry: false
