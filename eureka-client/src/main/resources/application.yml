@@ -9,3 +9,21 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka/
+
+management:
+  security:
+    #对于访问Actuator监控功能API关闭权限验证功能，但是实际项目为了安全最好开启
+    enabled: false
+  #为了安全，启用独立的端口来访问Spring Boot应用后端监控信息
+  port: 8000
+  #启用独立的url地址访问Spring Boot监控信息
+  context-path: /monitor
+
+  #启动项目后根据Actuator 提供了 13 个接口就可以查看应用信息了
+  #例如：http://localhost:8000/monitor/beans
+
+#开启接口优雅关闭Spring Boot应用
+#配置完成之后，启动示例项目，访问：http://localhost:8000/monitor/shutdown 可关闭应用
+endpoints:
+  shutdown:
+    enabled: true
